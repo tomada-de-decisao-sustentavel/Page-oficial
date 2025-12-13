@@ -319,10 +319,45 @@ body.dark-mode .menu-toggle.active {
     padding: 5px;
     border-radius: 8px;
 }
-/* Reduz tamanho dos personagens dos Naturais */
-.natural-card img {
-    width: 150px;          /* antes era ~150px */
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+/* ===== GRID DOS NATURAIS ===== */
+.Osnaturais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
+
+/* ===== CARD INDIVIDUAL ===== */
+.natural-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.natural-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* TÍTULO */
+.natural-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* TEXTO */
+.natural-card p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* DARK MODE */
+body.dark-mode .natural-card {
+    background: #222;
+    color: #eee;
+}
+
