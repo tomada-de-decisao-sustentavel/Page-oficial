@@ -2,10 +2,6 @@ function startIntro(){
 
     document.getElementById('intro').style.display = 'none';
 }
-function startGame(){
-
-    window.location.href = 'jogo-da-memoria/play/index.html';
-}
 function entrarJogo(){
     window.location.href = "/Page-oficial/jogo-da-memoria/play/index.html";
 }
