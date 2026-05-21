@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOMADA DE DECISÃO SUSTENTAVEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="menu">
+        <p>Encontre os pares sustentáveis</p>
+
+        <div class="buttons">
+            <button onclick="startGame('easy')">🟢 Fácil</button>
+            <button onclick="startGame('medium')">🟡 Médio</button>
+            <button onclick="startGame('hard')">🔴 Difícil</button>
+        </div>
+    </div>
+    <div class="message hidden" id="message"></div>
+
+    <div class="game-board hidden" id="board"></div>
+
+    <div class="victory hidden" id="victory">
+        <button onclick="location.reload()">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
