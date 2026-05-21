@@ -1,34 +1,34 @@
 const easyItems = [
-amarelo.png',
-azul.png',
-verde.png',
-vermelho.png'
+    'amarelo.png',
+    'azul.png',
+    'verde.png',
+    'vermelho.png'
 ];
 
 const mediumItems = [
-bekka.png',
-dramastico.png',
-duarte.png',
-estrela.png',
-gorrinho.png',
-limpinho.png',
-santim.png',
-sel-mar.png'
+'bekka.png',
+'dramastico.png',
+'duarte.png',
+'estrela.png',
+'gorrinho.png',
+'limpinho.png',
+'santim.png',
+'sel-mar.png'
 ];
 
 const hardItems = [
-bekka.png',
-dramastico.png',
-duarte.png',
-estrela.png',
-gorrinho.png',
-limpinho.png',
-santim.png',
-sel-mar.png'
-conchinha.png',
-caquinho.png',
-galinho.png',
-sonhadora.png'
+'bekka.png',
+'dramastico.png',
+'duarte.png',
+'estrela.png',
+'gorrinho.png',
+'limpinho.png',
+'santim.png',
+'sel-mar.png'
+'conchinha.png',
+'caquinho.png',
+'galinho.png',
+'sonhadora.png'
 ];
 
 let firstCard = null;
