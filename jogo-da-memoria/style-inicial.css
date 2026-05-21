@@ -1,183 +1,107 @@
-const easyItems = [
-    'amarelo.png',
-    'azul.png',
-    'verde.png',
-    'vermelho.png'
-];
+.intro-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
 
-const mediumItems = [
-    'bekka.png',
-    'dramastico.png',
-    'duarte.png',
-    'estrela.png',
-    'gorrinho.png',
-    'limpinho.png',
-    'santim.png',
-    'sel-mar.png'
-];
+    background:transparent;
 
-const hardItems = [
-    'bekka.png',
-    'dramastico.png',
-    'duarte.png',
-    'estrela.png',
-    'gorrinho.png',
-    'limpinho.png',
-    'santim.png',
-    'sel-mar.png',
-    'conchinha.png',
-    'caquinho.png',
-    'galinho.png',
-    'sonhadora.png'
-];
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-let matches = 0;
-let totalPairs = 0;
-
-function startGame(level){
-
-    matches = 0;
-
-    document.querySelector('.menu').classList.add('hidden');
-
-    document.getElementById('board').classList.remove('hidden');
-
-    let pairs;
-    let columns;
-
-    if(level === 'easy'){
-        pairs = 4;
-        columns = 4;
-    }
-    else if(level === 'medium'){
-        pairs = 8;
-        columns = 4;
-    }
-    else{
-
-        pairs = 12;
-
-        // MOBILE RESPONSIVO
-        columns = window.innerWidth <= 768 ? 4 : 8;
-    }
-
-    totalPairs = pairs;
-
-    let selected;
-
-    if(level === 'easy'){
-        selected = easyItems;
-    }
-    else if(level === 'medium'){
-        selected = mediumItems;
-    }
-    else{
-        selected = hardItems;
-    }
-
-    const cardsArray = [...selected, ...selected]
-        .sort(() => Math.random() - 0.5);
-
-    const board = document.getElementById('board');
-
-    board.innerHTML = '';
-
-    // TAMANHO RESPONSIVO
-    const cardSize =
-    window.innerWidth <= 768 ? 65 : 100;
-
-    board.style.gridTemplateColumns =
-    `repeat(${columns},${cardSize}px)`;
-
-    cardsArray.forEach(item => {
-
-        const card = document.createElement('div');
-
-        card.classList.add('card');
-
-        card.dataset.value = item;
-
-        card.innerHTML = '❓';
-
-        card.addEventListener('click', () => revealCard(card,item));
-
-        board.appendChild(card);
-
-    });
+    z-index:999;
+    padding:30px;
 }
 
-function revealCard(card,item){
+.intro-screen p{
+    width:80%;
+    max-width:700px;
 
-    if(lockBoard) return;
+    background:rgba(0,0,0,0.55);
 
-    if(card.classList.contains('revealed')) return;
+    border:1px solid rgba(255,255,255,0.2);
 
-    card.classList.add('revealed');
+    border-radius:30px;
 
-    card.innerHTML = `
-        <img src="${item}" width="80">
-    `;
+    backdrop-filter:blur(10px);
 
-    if(!firstCard){
+    padding:30px;
 
-        firstCard = card;
+    font-size:24px;
 
-        return;
-    }
+    line-height:1.6;
 
-    secondCard = card;
+    margin-bottom:40px;
 
-    lockBoard = true;
-
-    checkMatch();
+    box-shadow:
+        0 0 50px rgba(0,0,0,0.5);
 }
 
-function checkMatch(){
+.intro-screen button{
 
-    const isMatch =
-        firstCard.dataset.value === secondCard.dataset.value;
+    padding:18px 40px;
 
-    if(isMatch){
+    border:none;
 
-        matches++;
+    border-radius:20px;
 
-        setTimeout(() => {
+    background:#97c8df;
 
-            firstCard.remove();
-            secondCard.remove();
+    color:rgb(33,38,44);
 
-            resetBoard();
+    font-size:24px;
 
-            if(matches === totalPairs){
+    font-weight:bold;
 
-                alert('🎉 Você venceu!');
-            }
+    cursor:pointer;
 
-        },500);
-
-    }
-    else{
-
-        setTimeout(() => {
-
-            firstCard.classList.remove('revealed');
-            secondCard.classList.remove('revealed');
-
-            firstCard.innerHTML = '❓';
-            secondCard.innerHTML = '❓';
-
-            resetBoard();
-
-        },1000);
-    }
+    transition:0.3s;
 }
 
-function resetBoard(){
+.intro-screen button:hover{
 
-    firstCard = null;
-    secondCard = null;
-    lockBoard = false;
+    transform:scale(1.1);
+
+    box-shadow:
+        0 0 15px #c5ddd2,
+        0 0 30px #17e4d3;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background-image:url('teste.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    color:rgb(235,233,233);
+}
+
+footer{
+
+    position:fixed;
+
+    bottom:0;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:15px;
+
+    background:transparent;
+
+    color:white;
 }
