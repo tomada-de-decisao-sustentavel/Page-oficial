@@ -58,7 +58,7 @@ function startGame(level){
     }
     else{
         pairs = 12;
-        columns = 8;
+        columns = 4;
     }
 
     totalPairs = pairs;
