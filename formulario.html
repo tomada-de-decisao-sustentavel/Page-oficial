@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seja Parceiro | Tomada de Decisão Sustentável</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+<header>
+    <h1>Tomada de Decisão Sustentável</h1>
+    <p class="slogan">Educar hoje para transformar o amanhã.</p>
+
+    <button id="dark-toggle" aria-label="Alternar modo claro/escuro">🌙</button>
+
+    <nav>
+        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu">
+            <li><a href="index.html" class="menu-link">Início</a></li>
+            <li><a href="index.html#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="index.html#jogos" class="menu-link">Jogos</a></li>
+            <li><a href="index.html#atividades" class="menu-link">Atividades</a></li>
+            <li><a href="formulario.html" class="menu-link active">Parcerias</a></li>
+            <li><a href="index.html#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="secao visible">
+        <h2>🤝 Seja Parceiro</h2>
+        <p>Preencha o formulário abaixo e vamos construir juntos um futuro mais sustentável 🌱</p>
+
+        <form
+            action="https://formsubmit.co/tomadadedecisaosustentavel@gmail.com"
+            method="POST"
+            style="max-width:600px;margin:30px auto;display:flex;flex-direction:column;gap:12px;">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Novo parceiro - Tomada de Decisão Sustentável">
+
+            <input type="text" name="nome" placeholder="Nome completo ou empresa" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="telefone" placeholder="Telefone / WhatsApp" required>
+
+            <select name="tipo" required>
+                <option value="">Tipo de parceria</option>
+                <option>Escola / Instituição de ensino</option>
+                <option>Empresa</option>
+                <option>ONG / Projeto social</option>
+                <option>Palestras / Oficinas</option>
+                <option>Patrocínio / Apoio financeiro</option>
+                <option>Investimento</option>
+                <option>Outro</option>
+            </select>
+
+            <textarea name="mensagem" rows="5" placeholder="Como gostaria de colaborar?" required></textarea>
+
+            <button type="submit" class="botao">Enviar cadastro</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Tomada de Decisão Sustentável. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    });
+
+    menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            menuToggle.click();
+        }
+    });
+
+    const darkToggle = document.getElementById('dark-toggle');
+    darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+</script>
+
+</body>
+</html>

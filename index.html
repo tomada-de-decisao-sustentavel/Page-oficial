@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tomada de Decisão Sustentável</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+    <header>
+        <h1>Tomada de Decisão Sustentável</h1>
+        <p class="slogan">Educar hoje para transformar o amanhã.</p>
+        
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#2196f3" />
+
+        <button id="dark-toggle" aria-label="Alternar modo claro/escuro">🌙</button>
+
+        <nav>
+            <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu">
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                <li><a href="#jogos" class="menu-link">Jogos</a></li>
+                <li><a href="#atividades" class="menu-link">Atividades</a></li>
+                <li><a href="#contato" class="menu-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div id="audio-container" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  ">
+    <audio id="musica-tema" src="musica-tema.mp3" controls preload="auto" style="width: 200px;">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <audio id="som-menu" src="som-menu.mp3" preload="auto"></audio>
+  </div>
+
+    <main>
+        <section id="inicio" class="secao">
+            <h2>Bem-vindo!</h2>
+            <p>Aprenda sobre sustentabilidade de forma divertida e educativa.</p>
+        </section>
+
+        <section id="sobre" class="secao">
+            <h2> 🌍 Sobre o Projeto</h2>
+            <p> O projeto Tomada de Decisão Sustentável tem como objetivo conscientizar, educar e transformar atitudes para a construção de um mundo mais sustentável. Acreditamos que pequenas escolhas do dia a dia têm um grande impacto no futuro do planeta e que aprender sobre sustentabilidade pode — e deve — ser algo leve, acessível e divertido.
+
+Por meio de jogos educativos, atividades interativas e palestras, o projeto incentiva crianças, jovens e adultos a refletirem sobre consumo consciente, preservação do meio ambiente, respeito aos animais e responsabilidade social. Cada desafio apresentado convida o participante a pensar nas consequências de suas decisões e a escolher caminhos mais sustentáveis.
+
+Para tornar essa jornada ainda mais especial, surgem nossos amiguinhos, os Naturais 🌿🐾. Eles são personagens criados para representar a natureza, os animais e os diferentes elementos do planeta. De forma carismática e amigável, os Naturais se apresentam como guias dessa aventura, ajudando a ensinar, orientar e inspirar atitudes positivas em relação ao meio ambiente.
+
+O projeto também tem como objetivo aproximar a sustentabilidade da realidade das pessoas, levando conhecimento de forma prática e lúdica para escolas, comunidades, eventos e espaços educativos. Assim, buscamos formar cidadãos mais conscientes, empáticos e comprometidos com o cuidado da natureza — hoje e no futuro.</p>
+        
+<p style="margin-top: 20px; font-weight: 600;">
+  🌿 Quer conhecer melhor nossos amiguinhos?
+  <a href="osnaturais.html" class="botao" style="margin-left:10px;">
+    Venham conhecê-los ^^
+  </a>
+</p>
+</section>
+
+        
+
+<section id="jogos" class="secao">
+    <h2>Jogos</h2>
+    <p>Divirta-se e aprenda!</p>
+    <div class="botoes-jogos">
+      <a href="" class="botao" target="_blank" rel="noopener noreferrer">
+       -
+      </a>
+      <a href="" class="botao" target="_blank" rel="noopener noreferrer">
+       -
+      </a>
+    </div>
+</section>
+
+
+        <section id="atividades" class="secao">
+            <h2> 🎓 Atividades Educativas</h2>
+            <p>O projeto Tomada de Decisão Sustentável realiza palestras, oficinas e jogos presenciais, como o Dado Sustentável, levando conhecimento de forma lúdica, prática e interativa. As atividades são desenvolvidas para despertar a consciência ambiental de forma leve, divertida e acessível, incentivando a participação ativa de crianças e jovens.
+
+Estamos disponíveis para levar nosso conteúdo a crianças e jovens de todo o Brasil, em escolas, comunidades, eventos e projetos sociais. Nosso projeto é aberto e acessível, acreditando que a educação ambiental é uma ferramenta essencial para a construção de um mundo melhor.
+
+Caso tenha interesse em levar nossas atividades para sua escola, instituição ou evento, entre em contato pelo acesso abaixo. Teremos prazer em conversar, trocar ideias e colaborar para que, juntos, possamos ajudar a transformar o mundo em um lugar mais sustentável 🌱✨</p>
+        </section>
+
+        <section id="contato" class="secao">
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato para parcerias, palestras ou informações.</p>
+            <p>Email: tomadadedecisaosustentavel@gmail.com</p>
+            <p>WhatsApp: (xx) xxxxx-xxxx</p>
+            <h2>🤝 Parcerias</h2>
+            <a href="formulario.html" class="btn">Quero ser parceiro</a>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tomada de Decisão Sustentável. Todos os direitos reservados.</p>
+    </footer>
+
+<script>
+    // Menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    });
+    // Accessibility: open menu with keyboard (Enter or Space)
+    menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            menuToggle.click();
+        }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            menu.classList.remove('show');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', false);
+
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Fade-in animation for sections when in viewport
+    const sections = document.querySelectorAll('.secao');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Highlight active menu item on scroll
+    const menuLinks = document.querySelectorAll('.menu-link');
+    window.addEventListener('scroll', () => {
+        let scrollPos = window.scrollY || window.pageYOffset;
+        sections.forEach(section => {
+            if (scrollPos >= section.offsetTop - 80 && scrollPos < section.offsetTop + section.offsetHeight) {
+                const id = section.getAttribute('id');
+                menuLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                });
+            }
+        });
+    });
+
+    // Dark/Light Mode Toggle
+    const darkToggle = document.getElementById('dark-toggle');
+    darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if(document.body.classList.contains('dark-mode')) {
+            darkToggle.textContent = '☀️';
+        } else {
+            darkToggle.textContent = '🌙';
+        }
+    });
+    
+</script>
+</body>
+</html>
