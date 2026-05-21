@@ -24,7 +24,7 @@ const hardItems = [
 'gorrinho.png',
 'limpinho.png',
 'santim.png',
-'sel-mar.png'
+'sel-mar.png',
 'conchinha.png',
 'caquinho.png',
 'galinho.png',
