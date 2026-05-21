@@ -1,34 +1,34 @@
 const easyItems = [
-    'imagens/facil/amarelo.png',
-    'imagens/facil/azul.png',
-    'imagens/facil/verde.png',
-    'imagens/facil/vermelho.png'
+amarelo.png',
+azul.png',
+verde.png',
+vermelho.png'
 ];
 
 const mediumItems = [
-    'imagens/medio/bekka.png',
-    'imagens/medio/dramastico.png',
-    'imagens/medio/duarte.png',
-    'imagens/medio/estrela.png',
-    'imagens/medio/gorrinho.png',
-    'imagens/medio/limpinho.png',
-    'imagens/medio/santim.png',
-    'imagens/medio/sel-mar.png'
+bekka.png',
+dramastico.png',
+duarte.png',
+estrela.png',
+gorrinho.png',
+limpinho.png',
+santim.png',
+sel-mar.png'
 ];
 
 const hardItems = [
-    'imagens/medio/bekka.png',
-    'imagens/medio/dramastico.png',
-    'imagens/medio/duarte.png',
-    'imagens/medio/estrela.png',
-    'imagens/medio/gorrinho.png',
-    'imagens/medio/limpinho.png',
-    'imagens/medio/santim.png',
-    'imagens/medio/sel-mar.png',
-    'imagens/dificil/conchinha.png',
-    'imagens/dificil/caquinho.png',
-    'imagens/dificil/galinho.png',
-    'imagens/dificil/sonhadora.png'
+bekka.png',
+dramastico.png',
+duarte.png',
+estrela.png',
+gorrinho.png',
+limpinho.png',
+santim.png',
+sel-mar.png'
+conchinha.png',
+caquinho.png',
+galinho.png',
+sonhadora.png'
 ];
 
 let firstCard = null;
