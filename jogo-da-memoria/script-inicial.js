@@ -7,5 +7,5 @@ function startGame(){
     window.location.href = 'jogo-da-memoria/play/index.html';
 }
 function entrarJogo(){
-    window.location.href = "play/index.html";
+    window.location.href = "/Page-oficial/jogo-da-memoria/play/index.html";
 }
