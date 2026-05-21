@@ -1,7 +1,6 @@
-function startIntro(){
+function entrarJogo() {
 
-    document.getElementById('intro').style.display = 'none';
-}
-function entrarJogo(){
-    window.location.href = "https://tomada-de-decisao-sustentavel.github.io/Page-oficial/jogo-da-memoria/play/index.html";
+    window.location.href =
+    "https://tomada-de-decisao-sustentavel.github.io/Page-oficial/jogo-da-memoria/play/index.html";
+
 }
