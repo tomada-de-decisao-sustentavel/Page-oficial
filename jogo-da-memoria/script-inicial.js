@@ -8,6 +8,6 @@ function startGame(){
 }
 function entrarJogo(){
 
-    window.location.href = 'index.html';
+    window.location.href = 'jogo-da-memoria/play/index.html';
 
 }
