@@ -1,3 +1,6 @@
+body{
+    background:red !important;
+}
 .intro-screen{
     position:fixed;
     top:0;
