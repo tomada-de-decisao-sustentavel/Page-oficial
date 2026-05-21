@@ -1,102 +1,183 @@
-.intro-screen{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
+const easyItems = [
+    'amarelo.png',
+    'azul.png',
+    'verde.png',
+    'vermelho.png'
+];
 
-    background:transparent;
+const mediumItems = [
+    'bekka.png',
+    'dramastico.png',
+    'duarte.png',
+    'estrela.png',
+    'gorrinho.png',
+    'limpinho.png',
+    'santim.png',
+    'sel-mar.png'
+];
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+const hardItems = [
+    'bekka.png',
+    'dramastico.png',
+    'duarte.png',
+    'estrela.png',
+    'gorrinho.png',
+    'limpinho.png',
+    'santim.png',
+    'sel-mar.png',
+    'conchinha.png',
+    'caquinho.png',
+    'galinho.png',
+    'sonhadora.png'
+];
 
-    z-index:999;
-    padding:30px;
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let matches = 0;
+let totalPairs = 0;
+
+function startGame(level){
+
+    matches = 0;
+
+    document.querySelector('.menu').classList.add('hidden');
+
+    document.getElementById('board').classList.remove('hidden');
+
+    let pairs;
+    let columns;
+
+    if(level === 'easy'){
+        pairs = 4;
+        columns = 4;
+    }
+    else if(level === 'medium'){
+        pairs = 8;
+        columns = 4;
+    }
+    else{
+
+        pairs = 12;
+
+        // MOBILE RESPONSIVO
+        columns = window.innerWidth <= 768 ? 4 : 8;
+    }
+
+    totalPairs = pairs;
+
+    let selected;
+
+    if(level === 'easy'){
+        selected = easyItems;
+    }
+    else if(level === 'medium'){
+        selected = mediumItems;
+    }
+    else{
+        selected = hardItems;
+    }
+
+    const cardsArray = [...selected, ...selected]
+        .sort(() => Math.random() - 0.5);
+
+    const board = document.getElementById('board');
+
+    board.innerHTML = '';
+
+    // TAMANHO RESPONSIVO
+    const cardSize =
+    window.innerWidth <= 768 ? 65 : 100;
+
+    board.style.gridTemplateColumns =
+    `repeat(${columns},${cardSize}px)`;
+
+    cardsArray.forEach(item => {
+
+        const card = document.createElement('div');
+
+        card.classList.add('card');
+
+        card.dataset.value = item;
+
+        card.innerHTML = '❓';
+
+        card.addEventListener('click', () => revealCard(card,item));
+
+        board.appendChild(card);
+
+    });
 }
 
-.intro-screen h1{
-    font-size:70px;
-    margin-bottom:20px;
-    text-shadow:0 0 20px #00ff88;
+function revealCard(card,item){
+
+    if(lockBoard) return;
+
+    if(card.classList.contains('revealed')) return;
+
+    card.classList.add('revealed');
+
+    card.innerHTML = `
+        <img src="${item}" width="80">
+    `;
+
+    if(!firstCard){
+
+        firstCard = card;
+
+        return;
+    }
+
+    secondCard = card;
+
+    lockBoard = true;
+
+    checkMatch();
 }
 
-.intro-screen p{
-    max-width:700px;
-    font-size:24px;
-    line-height:1.6;
-    margin-bottom:40px;
+function checkMatch(){
+
+    const isMatch =
+        firstCard.dataset.value === secondCard.dataset.value;
+
+    if(isMatch){
+
+        matches++;
+
+        setTimeout(() => {
+
+            firstCard.remove();
+            secondCard.remove();
+
+            resetBoard();
+
+            if(matches === totalPairs){
+
+                alert('🎉 Você venceu!');
+            }
+
+        },500);
+
+    }
+    else{
+
+        setTimeout(() => {
+
+            firstCard.classList.remove('revealed');
+            secondCard.classList.remove('revealed');
+
+            firstCard.innerHTML = '❓';
+            secondCard.innerHTML = '❓';
+
+            resetBoard();
+
+        },1000);
+    }
 }
 
-.intro-screen button{
-    padding:18px 40px;
-    border:none;
-    border-radius:20px;
-    background:#97c8df;
-    color:rgb(33, 38, 44);
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+function resetBoard(){
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
 }
-
-.intro-screen button:hover{
-    transform:scale(1.1);
-
-    box-shadow:
-        0 0 15px #c5ddd2,
-        0 0 30px #17e4d3;
-        width:80%;
-max-width:250px;
-
-background:rgba(0,0,0,0.55);
-
-border:1px solid rgba(255,255,255,0.2);
-
-border-radius:100px;
-
-backdrop-filter:blur(10px);
-
-box-shadow:
-    0 0 500px rgba(0,0,0,0.5);
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-
-    background-image:url('teste.png');
-    background-size:cover;
-    background: position 100px;;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-
-    min-height:100vh;
-    color:rgb(235, 233, 233);
-}
-footer{
-    position:fixed;
-
-    bottom:0;
-    left:0;
-
-    width:100%;
-
-    padding:15px;
-
-    text-align:center;
-
-    color:white;
-
-    background:rgba(0,0,0,0.25);
-
-    backdrop-filter:blur(8px);
-
-    border-top:1px solid rgba(255,255,255,0.1);
-
-    font-size:14px;
-
-    z-index:999;
-}
-
-
